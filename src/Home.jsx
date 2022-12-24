@@ -1,5 +1,8 @@
 import SideBar from "./components/SideBar";
-// import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import Button from "./components/Button";
+import About from "./About";
 
 function Home() {
   return (
@@ -29,7 +32,11 @@ const HomePage = () => {
       </p>
 
       <div className="pt-5 pl-24">
-        <button className="lg-button">Start Taking Stats!</button>
+        {/* <button className="lg-button">
+            <Link to="/About">Start Taking Stats!</Link>
+          </button> */}
+
+        <Button color="orange">Start Taking Stats!</Button>
       </div>
     </>
   );

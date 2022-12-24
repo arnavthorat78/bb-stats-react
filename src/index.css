@@ -12,6 +12,13 @@
   }
 
   .lg-button {
-    @apply h-12 w-60 bg-orange-500 text-black hover:bg-orange-600 hover:text-black hover:rounded-xl rounded-3xl transition-all duration-300 ease-linear cursor-pointer shadow-lg;
+    @apply h-12 w-60 hover:rounded-xl rounded-3xl transition-all duration-300 ease-linear cursor-pointer shadow-lg;
+  }
+
+  .orange-btn {
+    @apply bg-orange-500 text-black hover:bg-orange-600 hover:text-black;
+  }
+  .red-btn {
+    @apply bg-red-500 text-white hover:bg-red-600 hover:text-white;
   }
 }
