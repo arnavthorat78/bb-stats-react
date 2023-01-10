@@ -28,7 +28,7 @@ const HomePage = () => {
       <p className="font-light text-ml pt-5 pl-24 text-gray-500">
         This is beta software. Please <strong>do not</strong> use in a production environment.
         <br />
-        <i className="text-xs">BB Stats v0.0.1</i>
+        <i className="text-xs">BB Stats build 7.2</i>
       </p>
 
       <div className="pt-5 pl-24">
@@ -36,7 +36,7 @@ const HomePage = () => {
             <Link to="/About">Start Taking Stats!</Link>
           </button> */}
 
-        <Button color="orange">Start Taking Stats!</Button>
+        <Button orange>Start Taking Stats!</Button>
       </div>
     </>
   );

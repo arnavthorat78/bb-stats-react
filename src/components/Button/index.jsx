@@ -1,52 +1,37 @@
-/**
- * Create a button using TailwindCSS styles. This button element gets the `lg-button` class defined in `index.css`, and appends the color information to it.
- *
- * Button style code without color (`@apply` removed):
- * ```css
- * .lg-button {
- *   h-12 w-60 hover:rounded-xl rounded-3xl transition-all duration-300 ease-linear cursor-pointer shadow-lg;
- * }
- * ```
- *
- * Generic color code (key: _<color>_-btn) (`@apply` removed):
- * ```css
- * .color-btn {
- *   bg-color-500 text-color hover:bg-color-600 hover:text-color;
- * }
- * ```
- *
- * The text inside of the tags is the text used inside the button.
- *
- * The possible colors are:
- *
- * - `red`
- * - `orange`
- *
- * Example usage:
- *
- * ```jsx
- * <Button color="red">Text</Button>
- * ```
- *
- * @param {string} color Specify the color of the button.
- * @returns JSX code
- */
-function Button({ children, color }) {
-  let classBtn = "";
+import className from "classnames";
 
-  switch (color) {
-    case "red":
-      classBtn = "red-btn";
-      break;
-    case "orange":
-      classBtn = "orange-btn";
-      break;
-    default:
-      classBtn = "red-btn";
-      break;
-  }
+function Button({ children, red, orange, yellow, green, blue, purple }) {
+  const classes = className(
+    "h-12 w-60 hover:rounded-xl rounded-3xl transition-all duration-300 ease-linear cursor-pointer shadow-lg",
+    {
+      "bg-red-500 text-white hover:bg-red-600 hover:text-white": red,
+      "bg-orange-500 text-black hover:bg-orange-600 hover:text-black": orange,
+      "bg-yellow-500 text-black hover:bg-yellow-600 hover:text-black": yellow,
+      "bg-green-500 text-black hover:bg-green-600 hover:text-black": green,
+      "bg-blue-500 text-white hover:bg-blue-600 hover:text-white": blue,
+      "bg-purple-500 text-white hover:bg-purple-600 hover:text-white": purple,
+    }
+  );
 
-  return <button className={"lg-button " + classBtn}>{children}</button>;
+  return <button className={classes}>{children}</button>;
 }
+
+Button.propTypes = {
+  checkVariationValue: ({ red, orange, yellow, green, blue, purple }) => {
+    const count =
+      Number(!!red) +
+      Number(!!orange) +
+      Number(!!yellow) +
+      Number(!!green) +
+      Number(!!blue) +
+      Number(!!purple);
+
+    if (count > 1) {
+      return new Error(
+        "Invalid props; only one of 'red', 'orange', 'yellow', 'green', 'blue' or 'purple' can be used."
+      );
+    }
+  },
+};
 
 export default Button;
