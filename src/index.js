@@ -8,11 +8,8 @@ import "./index.css";
 // Import Home.jsx
 import Home from "./Home";
 
-// Get a reference to the div with ID root
-const el = document.querySelector("#root");
-
 // Tell React to take control of that element
-const root = ReactDOM.createRoot(el);
+const root = ReactDOM.createRoot(document.querySelector("#root"));
 
 // Show the component on the screen
 root.render(

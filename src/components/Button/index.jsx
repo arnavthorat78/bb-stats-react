@@ -1,6 +1,6 @@
 import className from "classnames";
 
-function Button({ children, red, orange, yellow, green, blue, purple }) {
+function Button({ children, onclick, red, orange, yellow, green, blue, purple }) {
   const classes = className(
     "h-12 w-60 hover:rounded-xl rounded-3xl transition-all duration-300 ease-linear cursor-pointer shadow-lg",
     {
